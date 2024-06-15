@@ -12,7 +12,7 @@ namespace YoutubeApi.Domain.Entities
         public required string Title { get; set; }
         public required string Description { get; set; }
 
-        public required int BranId { get; set; }
+        public required int BrandId { get; set; }
 
         public required Decimal Price { get; set; }
 
