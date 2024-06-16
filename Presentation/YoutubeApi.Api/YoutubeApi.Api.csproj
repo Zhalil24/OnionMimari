@@ -16,11 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\Core\YoutubeApi.Application\YoutubeApi.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\YoutubeApi.Persistence\YoutubeApi.Persistence.csproj" />
+    <ProjectReference Include="..\..\YoutubeApi.Mapper\YoutubeApi.Mapper.csproj" />
   </ItemGroup>
 
 </Project>

@@ -20,7 +20,7 @@ namespace YoutubeApi.Persistence.UnitOfWorks
         }
         public async ValueTask DisposeAsync() => await dbContext.DisposeAsync();
 
-        public int SaveChanges() => dbContext.SaveChanges();
+        public int Save() => dbContext.SaveChanges();
 
         public async Task<int> SaveAsync() => await dbContext.SaveChangesAsync();
 
