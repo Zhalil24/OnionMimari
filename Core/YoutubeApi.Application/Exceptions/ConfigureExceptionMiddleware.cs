@@ -1,0 +1,18 @@
+﻿using Microsoft.AspNetCore.Builder;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace YoutubeApi.Application.Exceptions
+{
+    public static class ConfigureExceptionMiddleware
+    {
+        public static void ConfigureExceptionHandlingMiddleware(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+        }
+    }
+}
