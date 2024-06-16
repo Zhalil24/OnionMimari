@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using YoutubeApi.Application.Exceptions;
 
 namespace YoutubeApi.Application
 {
@@ -13,7 +14,7 @@ namespace YoutubeApi.Application
         public static void AddApllication( this IServiceCollection services) 
         {
             var asembly = Assembly.GetExecutingAssembly();
-
+            services.AddTransient<ExceptionMiddleware>();
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(asembly));
         }
     }
