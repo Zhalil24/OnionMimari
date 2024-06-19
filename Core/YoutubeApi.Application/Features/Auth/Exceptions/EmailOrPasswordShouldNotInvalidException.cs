@@ -2,8 +2,8 @@
 
 namespace YoutubeApi.Application.Features.Auth.Exceptions
 {
-    public class EmailOrPasswordShouldNotInvalidException : BaseException
+    public class RefreshTokenShouldNotBeExpiredException : BaseException
     {
-        public EmailOrPasswordShouldNotInvalidException() : base("Kullanıcı adı veya şifre yanlış! ") { }
+        public RefreshTokenShouldNotBeExpiredException() : base("Kullanıcı adı veya şifre yanlış! ") { }
     }
 }
