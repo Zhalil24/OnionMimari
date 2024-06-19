@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace YoutubeApi.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class IdentityDbContextAdded : Migration
+    public partial class UpdateDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,9 +16,6 @@ namespace YoutubeApi.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RefreshTokenExpiryTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -34,12 +31,12 @@ namespace YoutubeApi.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RefreshTokenExpiryTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -167,84 +164,84 @@ namespace YoutubeApi.Persistence.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CreatedDate", "Name" },
-                values: new object[] { new DateTime(2024, 6, 18, 11, 43, 49, 495, DateTimeKind.Utc).AddTicks(6595), "Shoes" });
+                values: new object[] { new DateTime(2024, 6, 19, 12, 41, 35, 648, DateTimeKind.Utc).AddTicks(6620), "Grocery, Baby & Baby" });
 
             migrationBuilder.UpdateData(
                 table: "Brands",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CreatedDate", "Name" },
-                values: new object[] { new DateTime(2024, 6, 18, 11, 43, 49, 495, DateTimeKind.Utc).AddTicks(6627), "Grocery & Tools" });
+                values: new object[] { new DateTime(2024, 6, 19, 12, 41, 35, 648, DateTimeKind.Utc).AddTicks(6635), "Beauty, Kids & Health" });
 
             migrationBuilder.UpdateData(
                 table: "Brands",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CreatedDate", "Name" },
-                values: new object[] { new DateTime(2024, 6, 18, 11, 43, 49, 495, DateTimeKind.Utc).AddTicks(6640), "Home, Outdoors & Outdoors" });
+                values: new object[] { new DateTime(2024, 6, 19, 12, 41, 35, 648, DateTimeKind.Utc).AddTicks(6643), "Shoes & Sports" });
 
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedDate",
-                value: new DateTime(2024, 6, 18, 14, 43, 49, 495, DateTimeKind.Local).AddTicks(7927));
+                value: new DateTime(2024, 6, 19, 15, 41, 35, 648, DateTimeKind.Local).AddTicks(7837));
 
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedDate",
-                value: new DateTime(2024, 6, 18, 14, 43, 49, 495, DateTimeKind.Local).AddTicks(7929));
+                value: new DateTime(2024, 6, 19, 15, 41, 35, 648, DateTimeKind.Local).AddTicks(7870));
 
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedDate",
-                value: new DateTime(2024, 6, 18, 14, 43, 49, 495, DateTimeKind.Local).AddTicks(7930));
+                value: new DateTime(2024, 6, 19, 15, 41, 35, 648, DateTimeKind.Local).AddTicks(7871));
 
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedDate",
-                value: new DateTime(2024, 6, 18, 14, 43, 49, 495, DateTimeKind.Local).AddTicks(7931));
+                value: new DateTime(2024, 6, 19, 15, 41, 35, 648, DateTimeKind.Local).AddTicks(7872));
 
             migrationBuilder.UpdateData(
                 table: "Details",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CreatedDate", "Description", "Title" },
-                values: new object[] { new DateTime(2024, 6, 18, 14, 43, 49, 497, DateTimeKind.Local).AddTicks(2651), "Alias bundan totam de vel.", "Explicabo." });
+                values: new object[] { new DateTime(2024, 6, 19, 15, 41, 35, 649, DateTimeKind.Local).AddTicks(9399), "Esse nemo orta için nesciunt.", "Lambadaki." });
 
             migrationBuilder.UpdateData(
                 table: "Details",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CreatedDate", "Description", "Title" },
-                values: new object[] { new DateTime(2024, 6, 18, 14, 43, 49, 497, DateTimeKind.Local).AddTicks(2708), "Sit aut çarpan ducimus aut.", "Laboriosam quasi." });
+                values: new object[] { new DateTime(2024, 6, 19, 15, 41, 35, 649, DateTimeKind.Local).AddTicks(9422), "Magnam quaerat architecto et alias.", "Doğru çobanın." });
 
             migrationBuilder.UpdateData(
                 table: "Details",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CreatedDate", "Description", "Title" },
-                values: new object[] { new DateTime(2024, 6, 18, 14, 43, 49, 497, DateTimeKind.Local).AddTicks(2728), "İçin explicabo biber consequuntur domates.", "Dolore." });
+                values: new object[] { new DateTime(2024, 6, 19, 15, 41, 35, 649, DateTimeKind.Local).AddTicks(9440), "İllo gördüm vel tempora aut.", "Kapının." });
 
             migrationBuilder.UpdateData(
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CreatedDate", "Description", "Discount", "Price", "Title" },
-                values: new object[] { new DateTime(2024, 6, 18, 14, 43, 49, 499, DateTimeKind.Local).AddTicks(784), "The Football Is Good For Training And Recreational Purposes", 5.66209595577230m, 10.64m, "Rustic Fresh Salad" });
+                values: new object[] { new DateTime(2024, 6, 19, 15, 41, 35, 651, DateTimeKind.Local).AddTicks(3096), "The Football Is Good For Training And Recreational Purposes", 8.431973369670280m, 919.87m, "Refined Steel Sausages" });
 
             migrationBuilder.UpdateData(
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CreatedDate", "Description", "Discount", "Price", "Title" },
-                values: new object[] { new DateTime(2024, 6, 18, 14, 43, 49, 499, DateTimeKind.Local).AddTicks(804), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 1.44980263562530m, 497.85m, "Unbranded Metal Shoes" });
+                values: new object[] { new DateTime(2024, 6, 19, 15, 41, 35, 651, DateTimeKind.Local).AddTicks(3115), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", 8.550376635322070m, 537.39m, "Licensed Frozen Towels" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
